@@ -1,12 +1,5 @@
-/* Resume site — readable, print-friendly */
+/* Resume site — simple, print-friendly */
 :root {
-  --bg: #0f1419;
-  --surface: #1a222d;
-  --text: #e8ecf1;
-  --muted: #9aa8b6;
-  --accent: #6ee7c5;
-  --accent-dim: #3d9a7e;
-  --border: #2a3544;
   --max: 42rem;
 }
 
@@ -22,12 +15,11 @@ html {
 
 body {
   margin: 0;
-  font-family: "DM Sans", system-ui, sans-serif;
-  font-optical-sizing: auto;
+  font-family: "Source Sans 3", system-ui, sans-serif;
   font-size: 1.05rem;
-  line-height: 1.55;
-  color: var(--text);
-  background: var(--bg);
+  line-height: 1.6;
+  color: #111;
+  background: #fff;
 }
 
 .skip {
@@ -39,16 +31,14 @@ body {
   top: 1rem;
   z-index: 99;
   padding: 0.5rem 1rem;
-  background: var(--surface);
-  color: var(--accent);
+  background: #f5f5f5;
+  color: #111;
 }
 
-h1,
-h2,
-h3 {
-  font-family: Fraunces, Georgia, serif;
-  font-optical-sizing: auto;
+h1, h2, h3 {
+  font-family: "Source Sans 3", system-ui, sans-serif;
   line-height: 1.2;
+  color: #111;
 }
 
 h1 {
@@ -59,24 +49,27 @@ h1 {
 
 h2 {
   margin: 0 0 1rem;
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #111;
+  padding-bottom: 0.25rem;
 }
 
 h3 {
   margin: 0;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 600;
 }
 
 a {
-  color: var(--accent);
+  color: #111;
   text-decoration: underline;
   text-underline-offset: 0.15em;
 }
 a:hover {
-  color: #9af0d9;
+  opacity: 0.7;
 }
 
 strong {
@@ -84,9 +77,8 @@ strong {
 }
 
 .hero {
-  padding: 3rem 1.5rem 2.5rem;
-  background: linear-gradient(165deg, var(--surface) 0%, var(--bg) 55%);
-  border-bottom: 1px solid var(--border);
+  padding: 2.5rem 1.5rem 2rem;
+  border-bottom: 2px solid #111;
 }
 
 .hero-inner {
@@ -97,32 +89,27 @@ strong {
 .tag {
   margin: 0 0 0.5rem;
   font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--accent-dim);
+  color: #555;
 }
 
 .lead {
   margin: 0 0 1.5rem;
   max-width: var(--max);
-  color: var(--muted);
+  color: #333;
   font-size: 1.05rem;
-}
-.lead strong {
-  color: var(--text);
 }
 
 .contact {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem 1.5rem;
+  gap: 0.5rem 1.5rem;
   margin: 0;
   padding: 0;
   list-style: none;
-}
-.contact a {
-  font-weight: 600;
+  font-size: 0.95rem;
 }
 
 main {
@@ -132,13 +119,13 @@ main {
 }
 
 .section {
-  margin-bottom: 2.75rem;
+  margin-bottom: 2.5rem;
 }
 
 .role {
-  margin-bottom: 2.25rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid #ddd;
 }
 .role:last-of-type {
   border-bottom: none;
@@ -146,8 +133,8 @@ main {
 }
 
 .role-head .meta {
-  margin: 0.35rem 0 1rem;
-  color: var(--muted);
+  margin: 0.25rem 0 0.75rem;
+  color: #555;
   font-size: 0.95rem;
 }
 
@@ -156,10 +143,8 @@ main {
   padding-left: 1.15rem;
 }
 .role li {
-  margin-bottom: 0.55rem;
-}
-.role li::marker {
-  color: var(--accent-dim);
+  margin-bottom: 0.5rem;
+  color: #222;
 }
 
 .section-split {
@@ -175,62 +160,47 @@ main {
 
 .skills {
   margin: 0;
-  color: var(--muted);
-  line-height: 1.65;
-}
-
-.skills-note {
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: var(--muted);
-  font-family: "DM Sans", sans-serif;
+  color: #333;
+  line-height: 1.75;
 }
 
 .muted {
-  color: var(--muted);
+  color: #555;
   font-size: 0.95rem;
 }
 
 .footer {
   max-width: calc(var(--max) + 4rem);
   margin: 0 auto;
-  padding: 0 1.5rem 2rem;
+  padding: 1.5rem 1.5rem 2rem;
   font-size: 0.85rem;
-  color: var(--muted);
+  color: #555;
+  border-top: 1px solid #ddd;
 }
 
 @media print {
   body {
-    background: #fff;
-    color: #111;
-    font-size: 11pt;
+    font-size: 10.5pt;
   }
-  /* Stop Chrome/Firefox from appending raw URLs after links in Print / Save as PDF */
   a[href]::after {
     content: none !important;
   }
   .hero {
-    background: #fff;
-    border-bottom: 1px solid #ccc;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
   }
-  .tag,
-  h2 {
-    color: #0d5c4a;
+  .section {
+    margin-bottom: 1.5rem;
   }
-  a {
-    color: #0b4d3f;
-    text-decoration: none;
+  .role {
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
   }
-  .lead,
-  .role-head .meta,
-  .skills,
-  .muted,
-  .footer {
-    color: #444;
+  .section-split {
+    display: block;
   }
-  .contact {
-    break-inside: avoid;
+  .section-split > div {
+    margin-bottom: 1.25rem;
   }
   .footer {
     display: none;
@@ -240,7 +210,6 @@ main {
   }
 }
 
-/* Screen-only blocks; hidden in print via @media print .no-print */
 .print-actions.no-print {
   margin: 1.25rem 0 0;
 }
@@ -255,21 +224,19 @@ main {
 
 .print-actions-hint {
   font-size: 0.88rem;
-  color: var(--muted);
+  color: #555;
   flex: 1 1 12rem;
 }
 
 .pdf-hint {
   font-size: 0.85rem;
-  color: var(--muted);
-  font-weight: 400;
+  color: #555;
 }
 .pdf-hint code {
   font-size: 0.82rem;
-  background: var(--surface);
+  background: #f5f5f5;
   padding: 0.15rem 0.4rem;
   border-radius: 4px;
-  color: var(--accent-dim);
 }
 
 .btn-print {
@@ -278,15 +245,15 @@ main {
   font-weight: 600;
   padding: 0.55rem 1rem;
   cursor: pointer;
-  color: var(--bg);
-  background: var(--accent);
+  color: #fff;
+  background: #111;
   border: none;
   border-radius: 6px;
 }
 .btn-print:hover {
-  filter: brightness(1.08);
+  background: #333;
 }
 .btn-print:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid #111;
   outline-offset: 3px;
 }
