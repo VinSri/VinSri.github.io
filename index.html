@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Vinodhini Subbu — Senior Ruby on Rails Developer" />
+  <title>Vinodhini Subbu — Resume</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="tag">Senior Ruby on Rails Developer</p>
+      <h1>Vinodhini Subbu</h1>
+      <p class="lead">
+        Senior software engineer with <strong>8+ years</strong> building high-traffic web applications in <strong>Ruby on Rails</strong>.
+        Led the architecture and delivery of <strong>FreeBMD2</strong>, now handling <strong>186,848 searches per month</strong>.
+        Strong full-stack background across <strong>Rails</strong>, <strong>Hotwire (Turbo &amp; Stimulus)</strong>, <strong>Tailwind CSS</strong>,
+        <strong>PostgreSQL</strong>, <strong>MongoDB</strong>, and <strong>MySQL</strong>.
+        Experienced in production support, volunteer team management, and working directly with senior stakeholders.
+      </p>
+      <ul class="contact">
+        <li><a href="mailto:vinosrik@gmail.com">vinosrik@gmail.com</a></li>
+        <li><a href="tel:07577055780">07577055780</a></li>
+        <li><a href="https://github.com/VinSri" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="[LinkedIn URL]">LinkedIn</a></li>
+        <li class="no-print"><a href="Vinodhini-Subbu-Resume.pdf" download>Latest PDF</a> <span class="pdf-hint">(run <code>./export-pdf.sh</code> first)</span></li>
+      </ul>
+      <p class="print-actions no-print">
+        <button type="button" class="btn-print" onclick="window.print()">Save as PDF — Print dialog</button>
+        <span class="print-actions-hint">Choose <strong>Save as PDF</strong> as the printer. Uses the print layout (light, compact).</span>
+      </p>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section" aria-labelledby="exp-heading">
+      <h2 id="exp-heading">Experience</h2>
+
+      <article class="role">
+        <header class="role-head">
+          <h3>Senior Software Developer</h3>
+          <p class="meta">Free UK Genealogy · United Kingdom · 2017–present</p>
+        </header>
+        <ul>
+          <li><strong>Led the architecture and delivery of FreeBMD2</strong>, a high-performance genealogy search application built on Ruby on Rails, now serving <strong>186,848 searches per month</strong>, using a hybrid MySQL/MongoDB database architecture to optimise query performance and data storage.</li>
+          <li><strong>Recruited and managed a volunteer developer team of 5</strong>, conducting code reviews, providing mentorship, and maintaining code quality standards across the engineering team.</li>
+          <li>Develop and maintain <strong>MyopicVicar</strong>, the shared Rails codebase serving <strong>FreeREG</strong>, <strong>FreeCEN</strong>, and <strong>FreeBMD</strong> — one codebase configured across multiple public genealogy sites with shared domain logic.</li>
+          <li>Work with a <strong>hybrid persistence layer</strong>: <strong>MongoDB</strong> via <strong>Mongoid</strong> for core document models and <strong>MySQL</strong> where the stack relies on relational data — designing queries, indexes, and data flows accordingly.</li>
+          <li>Built and maintained <strong>cron-based background jobs</strong> for scheduled data processing including site usage statistics, search statistics aggregation, and embargo record management.</li>
+          <li>Integrated <strong>monetisation and measurement</strong>: Google AdSense, Google Analytics, and Google Tag Manager, configured to minimise impact on core user journeys.</li>
+          <li>Connected <strong>third-party APIs</strong> including GitHub issue creation and status via Octokit from feedback and contact workflows.</li>
+          <li>Used <strong>AWS S3</strong>-backed storage patterns (Fog, Dragonfly S3 integration) alongside on-server file handling.</li>
+          <li>Implemented and operated <strong>Devise</strong>-based authentication (including encryptable passwords) and role-aware access; maintained alignment with Refinery CMS user concepts.</li>
+          <li>Operated production systems with <strong>New Relic</strong> and <strong>Airbrake</strong> for monitoring and error reporting; led troubleshooting and hardening.</li>
+          <li>Collaborated directly with the CEO and Board of Trustees to align technical initiatives with organisational goals and annual quality targets.</li>
+          <li>Integrated <strong>AI/LLM tooling</strong> to accelerate investigation, refactoring, test scaffolding, and documentation — all changes validated through code review and runtime debugging before shipping.</li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <header class="role-head">
+          <h3>Software Developer</h3>
+          <p class="meta">Cognizant Technology Solutions · India · 2014–2015</p>
+        </header>
+        <ul>
+          <li>Built customer-facing and internal web applications with <strong>Ruby on Rails</strong> and <strong>RSpec</strong> (TDD).</li>
+          <li>Led technical design for system transformation and data migration with cross-functional teams.</li>
+          <li>Built scalable data pipelines and supported large-scale data processing.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Personal Projects</h2>
+
+      <article class="role">
+        <header class="role-head">
+          <h3>Tamil Language Learning App</h3>
+          <p class="meta">
+            Open source · Rails 8.1 · Hotwire (Turbo &amp; Stimulus) · Tailwind CSS · PostgreSQL ·
+            <a href="https://github.com/VinSri/tamil-learning-app" target="_blank" rel="noopener">github.com/VinSri/tamil-learning-app</a>
+          </p>
+        </header>
+        <ul>
+          <li>Built a full-featured Tamil language learning web app supporting both modern and classical Tamil.</li>
+          <li>Features include letter and word lessons, grammar lessons, quizzes, reading passages, audio support, a built-in dictionary (Nigandu), and per-user progress and achievement tracking.</li>
+          <li>Demonstrates hands-on use of <strong>Hotwire Turbo and Stimulus</strong> for reactive, SPA-like UX without a heavy JavaScript framework, styled with <strong>Tailwind CSS</strong>.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section section-split" aria-labelledby="skills-heading">
+      <div>
+        <h2 id="skills-heading">Skills</h2>
+        <p class="skills">
+          <strong>Languages:</strong> Ruby · JavaScript · jQuery · Ajax · HTML/CSS · Perl<br />
+          <strong>Frameworks:</strong> Ruby on Rails · Hotwire (Turbo &amp; Stimulus) · RSpec · RefineryCMS · Tailwind CSS<br />
+          <strong>Databases:</strong> PostgreSQL · MySQL · MongoDB (Mongoid)<br />
+          <strong>Tools:</strong> Git · Unix · Crontab · AWS S3 · New Relic · Airbrake · GitHub API<br />
+          <strong>In training:</strong> React · Python
+        </p>
+      </div>
+      <div>
+        <h2 id="edu-heading">Education</h2>
+        <p>
+          <strong>Bachelor of Engineering</strong>, Electronics and Instrumentation<br />
+          Laxmi Narain College of Technology, Bhopal, India
+        </p>
+
+        <h2 id="relocation-heading" style="margin-top:1.5rem">Availability</h2>
+        <p class="muted">Based in the United Kingdom. Relocated from India in 2017.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>United Kingdom · <a href="mailto:vinosrik@gmail.com">vinosrik@gmail.com</a> · <a href="https://github.com/VinSri" target="_blank" rel="noopener">github.com/VinSri</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,292 @@
+/* Resume site — readable, print-friendly */
+:root {
+  --bg: #0f1419;
+  --surface: #1a222d;
+  --text: #e8ecf1;
+  --muted: #9aa8b6;
+  --accent: #6ee7c5;
+  --accent-dim: #3d9a7e;
+  --border: #2a3544;
+  --max: 42rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-optical-sizing: auto;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 99;
+  padding: 0.5rem 1rem;
+  background: var(--surface);
+  color: var(--accent);
+}
+
+h1,
+h2,
+h3 {
+  font-family: Fraunces, Georgia, serif;
+  font-optical-sizing: auto;
+  line-height: 1.2;
+}
+
+h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 700;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+a:hover {
+  color: #9af0d9;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.hero {
+  padding: 3rem 1.5rem 2.5rem;
+  background: linear-gradient(165deg, var(--surface) 0%, var(--bg) 55%);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-inner {
+  max-width: calc(var(--max) + 4rem);
+  margin: 0 auto;
+}
+
+.tag {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-dim);
+}
+
+.lead {
+  margin: 0 0 1.5rem;
+  max-width: var(--max);
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+.lead strong {
+  color: var(--text);
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.contact a {
+  font-weight: 600;
+}
+
+main {
+  max-width: calc(var(--max) + 4rem);
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3rem;
+}
+
+.section {
+  margin-bottom: 2.75rem;
+}
+
+.role {
+  margin-bottom: 2.25rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+.role:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.role-head .meta {
+  margin: 0.35rem 0 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.role ul {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+.role li {
+  margin-bottom: 0.55rem;
+}
+.role li::marker {
+  color: var(--accent-dim);
+}
+
+.section-split {
+  display: grid;
+  gap: 2rem;
+}
+@media (min-width: 720px) {
+  .section-split {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+  }
+}
+
+.skills {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.skills-note {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--muted);
+  font-family: "DM Sans", sans-serif;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.footer {
+  max-width: calc(var(--max) + 4rem);
+  margin: 0 auto;
+  padding: 0 1.5rem 2rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+@media print {
+  body {
+    background: #fff;
+    color: #111;
+    font-size: 11pt;
+  }
+  /* Stop Chrome/Firefox from appending raw URLs after links in Print / Save as PDF */
+  a[href]::after {
+    content: none !important;
+  }
+  .hero {
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    padding-top: 1rem;
+  }
+  .tag,
+  h2 {
+    color: #0d5c4a;
+  }
+  a {
+    color: #0b4d3f;
+    text-decoration: none;
+  }
+  .lead,
+  .role-head .meta,
+  .skills,
+  .muted,
+  .footer {
+    color: #444;
+  }
+  .contact {
+    break-inside: avoid;
+  }
+  .footer {
+    display: none;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Screen-only blocks; hidden in print via @media print .no-print */
+.print-actions.no-print {
+  margin: 1.25rem 0 0;
+}
+
+.print-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  max-width: var(--max);
+}
+
+.print-actions-hint {
+  font-size: 0.88rem;
+  color: var(--muted);
+  flex: 1 1 12rem;
+}
+
+.pdf-hint {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 400;
+}
+.pdf-hint code {
+  font-size: 0.82rem;
+  background: var(--surface);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  color: var(--accent-dim);
+}
+
+.btn-print {
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+  color: var(--bg);
+  background: var(--accent);
+  border: none;
+  border-radius: 6px;
+}
+.btn-print:hover {
+  filter: brightness(1.08);
+}
+.btn-print:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
